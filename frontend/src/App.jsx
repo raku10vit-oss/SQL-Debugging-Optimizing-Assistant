@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 
 // ── Constants ──────────────────────────────────────────────────────────────
-const API_BASE = 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
 const SAMPLE_DEBUG_SQL =
   'SELECT emp_nmae, dept_id\nFROM employees\nWHERE dept_id = 10;';

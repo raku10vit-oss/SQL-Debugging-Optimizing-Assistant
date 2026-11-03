@@ -45,6 +45,7 @@ app = FastAPI(
 
 # ── CORS ─────────────────────────────────────────────────────────────────────
 # Restricted to the local Vite dev server. Extend for production deployments.
+# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -53,6 +54,7 @@ app.add_middleware(
         "http://localhost:5174",
         "http://localhost:3000",
     ],
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=False,
     allow_methods=["GET", "POST"],
     allow_headers=["Content-Type", "Accept"],
